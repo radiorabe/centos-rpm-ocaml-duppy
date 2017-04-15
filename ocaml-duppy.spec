@@ -1,11 +1,11 @@
 Name:     ocaml-duppy
 
-Version:  0.5.2
+Version:  0.6.0
 Release:  1
 Summary:  OCAML duppy scheduler
 License:  GPLv2+
 URL:      https://github.com/chambart/ocaml-duppy
-Source0:  https://github.com/savonet/ocaml-duppy/releases/download/0.5.2/ocaml-duppy-0.5.2.tar.gz
+Source0:  https://github.com/savonet/ocaml-duppy/releases/download/%{version}/ocaml-duppy-%{version}.tar.gz
 
 BuildRequires: ocaml
 BuildRequires: pcre-ocaml
@@ -40,6 +40,7 @@ make install
 /usr/lib64/ocaml/duppy/duppy.cmx
 /usr/lib64/ocaml/duppy/duppy.cmxa
 /usr/lib64/ocaml/duppy/duppy.mli
+/usr/lib64/ocaml/duppy/duppy_ssl.mli
 /usr/lib64/ocaml/duppy/libduppy_stubs.a
 /usr/lib64/ocaml/duppy/pa_duppy.mli
 /usr/lib64/ocaml/stublibs/dllduppy_stubs.so
@@ -49,5 +50,8 @@ make install
 OCaml asynchronous scheduler and monad for server-oriented programming.
 
 %changelog
+* Fri Apr 14 2017 Lucas Bickel <hairmare@rabe.ch>
+- Bump version to 0.6.0
+
 * Sun Jul  3 2016 Lucas Bickel <hairmare@rabe.ch>
 - initial version, mostly stolen from https://www.openmamba.org/showfile.html?file=/pub/openmamba/devel/specs/ocaml-duppy.spec
