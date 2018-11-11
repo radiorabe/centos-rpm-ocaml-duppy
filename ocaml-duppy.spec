@@ -1,7 +1,7 @@
 Name:     ocaml-duppy
 
-Version:  0.7.1
-Release:  1
+Version:  0.7.4
+Release:  0.0
 Summary:  OCAML duppy scheduler
 License:  GPLv2+
 URL:      https://github.com/savonet/ocaml-duppy
@@ -12,8 +12,8 @@ BuildRequires: ocaml-camlp4
 BuildRequires: ocaml-camlp4-devel
 BuildRequires: ocaml-findlib
 BuildRequires: ocaml-ssl
-BuildRequires: pcre-ocaml
-Requires:      pcre-ocaml
+BuildRequires: ocaml-pcre-devel
+Requires:      ocaml-pcre
 
 %prep
 %setup -q 
@@ -58,5 +58,8 @@ make install
 OCaml asynchronous scheduler and monad for server-oriented programming.
 
 %changelog
+* Sun Nov 11 2018 Lucas Bickel <hairmare@rabe.ch> - 0.7.4-0.0
+- Bump to 0.7.4
+
 * Sun Aug 19 2018 Lucas Bickel <hairmare@rabe.ch> 0.7.1-1
 - Bump to 0.7.1
