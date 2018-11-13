@@ -1,6 +1,6 @@
 Name:     ocaml-duppy
 
-Version:  0.7.4
+Version:  0.8.0
 Release:  0.0
 Summary:  OCAML duppy scheduler
 License:  GPLv2+
@@ -48,16 +48,16 @@ make install
 /usr/lib64/ocaml/duppy/duppy_ssl.cmx
 /usr/lib64/ocaml/duppy/duppy_ssl.cmxa
 /usr/lib64/ocaml/duppy/libduppy_stubs.a
-/usr/lib64/ocaml/duppy/pa_duppy.mli
 /usr/lib64/ocaml/stublibs/dllduppy_stubs.so
 /usr/lib64/ocaml/stublibs/dllduppy_stubs.so.owner
-/usr/lib64/ocaml/duppy/pa_duppy.cmi
-/usr/lib64/ocaml/duppy/pa_duppy.cmo
 
 %description
 OCaml asynchronous scheduler and monad for server-oriented programming.
 
 %changelog
+* Mon Nov 13 2018 Lucas Bickel <hairmare@rabe.ch> - 0.8.0-0.0
+- Bump to 0.8.0
+
 * Sun Nov 11 2018 Lucas Bickel <hairmare@rabe.ch> - 0.7.4-0.0
 - Bump to 0.7.4
 
