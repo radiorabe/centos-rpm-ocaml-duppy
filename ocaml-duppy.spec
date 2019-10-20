@@ -1,6 +1,6 @@
 Name:     ocaml-duppy
-Version:  0.8.0
-Release:  0.2
+Version:  0.8.1
+Release:  0.1
 Summary:  OCAML duppy scheduler
 
 %global libname %(echo %{name} | sed -e 's/^ocaml-//')
@@ -71,6 +71,9 @@ make install
 %endif
 
 %changelog
+* Sun Oct 20 2019 Lucas Bickel <hairmare@rabe.ch> - 0.8.1-0.1
+- Bump to 0.8.1
+
 * Sun Dec  9 2018 Lucas Bickel <hairmare@rabe.ch> - 0.8.0-0.2
 - Cleanup and add seperate -devel subpackage
 
