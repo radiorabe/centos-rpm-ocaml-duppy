@@ -13,7 +13,7 @@ BuildRequires: ocaml
 BuildRequires: ocaml-findlib
 BuildRequires: ocaml-dune
 BuildRequires: ocaml-ssl
-BuildRequires: ocaml-pcre-devel <= 7.2.3-0.1.2.rabe
+BuildRequires: ocaml-pcre-devel
 #Requires:      ocaml-pcre
 
 
