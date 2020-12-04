@@ -1,19 +1,20 @@
 Name:     ocaml-duppy
-Version:  0.8.0
-Release:  0.2
+Version:  0.9.0
+Release:  0.1%{?dist}
 Summary:  OCAML duppy scheduler
 
 %global libname %(echo %{name} | sed -e 's/^ocaml-//')
 
 License:  GPLv2+
 URL:      https://github.com/savonet/ocaml-duppy
-Source0:  https://github.com/savonet/ocaml-duppy/releases/download/%{version}/%{name}-%{version}.tar.gz
+Source0:  https://github.com/savonet/ocaml-duppy/archive/v%{version}.tar.gz?#%{name}-%{version}.tar.gz
 
 BuildRequires: ocaml
 BuildRequires: ocaml-findlib
+BuildRequires: ocaml-dune
 BuildRequires: ocaml-ssl
-BuildRequires: ocaml-pcre-devel
-Requires:      ocaml-pcre
+BuildRequires: ocaml-pcre-devel <= 7.2.3-0.1.2.rabe
+#Requires:      ocaml-pcre
 
 
 %description
@@ -33,27 +34,20 @@ files for developing applications that use %{name}.
 %autosetup -n %{name}-%{version}
 
 %build
-./configure \
-   --prefix=%{_prefix} \
-   -disable-ldconf
-make all
+dune build
 
 %install
-export DESTDIR=%{buildroot}
-export OCAMLFIND_DESTDIR=%{buildroot}$(ocamlfind printconf destdir)
-export DLLDIR=$OCAMLFIND_DESTDIR/stublibs
+dune install \
+  --prefix %{buildroot} \
+  --libdir %{buildroot}$(ocamlfind printconf destdir)
+rm -rf %{buildroot}/doc
 
-install -d $OCAMLFIND_DESTDIR/%{ocamlpck}
-install -d $OCAMLFIND_DESTDIR/stublibs
-
-make install
 
 %files
-%doc README
+%doc README.md CHANGES
 %license COPYING
 %{_libdir}/ocaml/%{libname}
 %{_libdir}/ocaml/stublibs/dll%{libname}_stubs.so
-%{_libdir}/ocaml/stublibs/dll%{libname}_stubs.so.owner
 %ifarch %{ocaml_native_compiler}
 %exclude %{_libdir}/ocaml/%{libname}/*.a
 %exclude %{_libdir}/ocaml/%{libname}/*.cmxa
@@ -71,6 +65,12 @@ make install
 %endif
 
 %changelog
+* Thu Dec 3 2020 Lucas Bickel <hairmare@rabe.ch> - 0.9.0-0.1
+- Bump to 0.9.0
+
+* Sun Oct 20 2019 Lucas Bickel <hairmare@rabe.ch> - 0.8.1-0.1
+- Bump to 0.8.1
+
 * Sun Dec  9 2018 Lucas Bickel <hairmare@rabe.ch> - 0.8.0-0.2
 - Cleanup and add seperate -devel subpackage
 
